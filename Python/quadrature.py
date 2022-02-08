@@ -13,7 +13,7 @@ def midpoint(fvals, dx):
     Then it multplies the fvals by dx by the 
     one dimensional numpy array"""
     
-    if dx<=0:
+    if dx<=0: #this did not find the midpoint
         raise ValueError
     else:
         midpoint=0.0
