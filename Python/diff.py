@@ -10,15 +10,17 @@ np.seterr(all='raise')
 from math import factorial
 
 def finite_diff(x,y):
-    """THis function appromiximates teh dervitave using a finite difference
+    """This function appromiximates the dervitave using a finite difference
     
     The system goes through the foward difference and backwrard difference 
     to find the ends, while the central difference is used for inferior
-    points"""
+    points. Check same amount of columns and rows. You then take the derivative 
+    from the first and last number on the row."""
  
     if x.size!=y.size:
-        raise ValueError
         print("Size of x or y are not the same")
+        raise ValueError
+        #print("Size of x or y are not the same"). Moved this statement up as it would have canceled my statement. 
     else:
         
         dydx=x.copy()
@@ -45,21 +47,21 @@ def polynomial_derivative(coef,x):
     confusing in what we had to do with horners method.
     I also made p==0 as the velocity should not equal 0"""
     
-    if coef.size==0:
+    if coef.size==0: #coefficient has to be a number
         raise RuntimeError
     else:
         
         try:
             n=coef.size
             p=0.0
-            for i in range(n,-1):
-                p=coef[i]+(x)
+            for i in range(0, n): #looks like I wanted to find the size 
+                p+=coef[i]+(x)
         except ValueError:
             print("Velocity function is zero")
             raise ValueError
             
         else:
-            return p
+            return p #Looking back at it now the code does not run. 
 def fd_formula(x,deriv=1):
     """The jupyter notebook didnt help. I have no idea 
     
@@ -74,10 +76,10 @@ def fd_formula(x,deriv=1):
     else:
         
         A=np.copy(x)
-        for i in range(A.size):
+        for i in range(A.size): #Made everything in A 1. Unfortunately I was not able to understand the purpose of this function. 
             A[i]=1
         
-        for i in range(x.size):
+        for i in range(x.size):  
             for j in range(1):
                 A=np.power(x[i],1)
         
