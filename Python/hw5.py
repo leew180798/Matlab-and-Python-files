@@ -7,7 +7,7 @@ def bb_residual(P,V,T,AO,BO,a,b,c):
     """This system calculates the residual using 7 var.
     
     Using the equations given, everything is set equal to residual
-    or zero. The residual is calculated using hte bridgeman
+    or zero. The residual is calculated using the bridgeman
     equation. This will be used later to find V"""
     #intialize P vector
     #intialize z vector
