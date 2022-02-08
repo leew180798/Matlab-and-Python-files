@@ -6,6 +6,7 @@ Created on Tue Mar  3 13:04:24 2020
 """
 
 import numpy as np
+#Used in HW6
 np.seterr(all='raise')
 from math import factorial
 
